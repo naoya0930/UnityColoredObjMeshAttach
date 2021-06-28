@@ -1,5 +1,5 @@
 # UnityColoredObjMeshAttach
-Thanks :
+Thanks : https://github.com/shimawork/unity-vertex-color-obj-loader
 
 1. Objをunityインポート
 2. インポートしたObject->Model->read/write enableにチェック
