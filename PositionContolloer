@@ -1,0 +1,68 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PositionContolloer : MonoBehaviour
+{
+    private GameObject root;
+
+    private Vector3 rootRot;
+    // Start is called before the first frame update
+    void Start()
+    {
+        root = transform.root.gameObject;   
+        rootRot=Vector3.zero;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // 回転設定: A,D,W,S,Z,C
+        if(Input.GetKey(KeyCode.A)){
+            this.transform.Rotate(/*this.transform.localEulerAngles*/(new Vector3(0,0,1)));
+        }
+        if(Input.GetKey(KeyCode.D)){
+            this.transform.Rotate(/*this.transform.localEulerAngles*/(new Vector3(0,0,-1)));
+        }
+        if(Input.GetKey(KeyCode.W)){
+            this.transform.Rotate(/*this.transform.localEulerAngles*/(new Vector3(0,1,0)));
+        }
+        if(Input.GetKey(KeyCode.S)){
+            this.transform.Rotate(/*this.transform.localEulerAngles*/(new Vector3(0,-1,0)));
+        }
+        if(Input.GetKey(KeyCode.Z)){
+            this.transform.Rotate(/*this.transform.localEulerAngles*/(new Vector3(-1,0,0)));
+        }
+        if(Input.GetKey(KeyCode.C)){
+            this.transform.Rotate(/*this.transform.localEulerAngles*/(new Vector3(1,0,0)));
+        }
+
+        // スケーリング設定
+        if(Input.GetKey(KeyCode.UpArrow)){
+            this.transform.localScale += new Vector3(0.03f,0.03f,0.03f);
+        }
+        if(Input.GetKey(KeyCode.DownArrow)){
+            this.transform.localScale += new Vector3(-0.03f,-0.03f,-0.03f);
+        }
+
+        //position設定
+        if(Input.GetKey(KeyCode.Y)){
+            this.transform.position += ((new Vector3(0,0,0.01f)));
+        }
+        if(Input.GetKey(KeyCode.H)){
+            this.transform.position += ((new Vector3(0,0,-0.01f)));
+        }
+        if(Input.GetKey(KeyCode.G)){
+            this.transform.position += ((new Vector3(0,0.01f,0)));
+        }
+        if(Input.GetKey(KeyCode.J)){
+            this.transform.position += ((new Vector3(0,-0.01f,0)));
+        }
+        if(Input.GetKey(KeyCode.B)){
+            this.transform.position += ((new Vector3(0.01f,0,0)));
+        }
+        if(Input.GetKey(KeyCode.M)){
+            this.transform.position += ((new Vector3(-0.01f,0,0)));
+        }
+    }
+}
